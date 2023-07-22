@@ -5,16 +5,18 @@ const express = require("express");
 const router = express.Router();
 
 
-router.post("/new", controller.newPrenatal);
+router.post("/new", controller.newPrenatal); // ok
 
-router.get("/all", controller.findAllPrenatal);
+router.get("/all", controller.findAllPrenatal); //ok
 
-router.get("/:prontuario", controller.findById);// tenho que mudar o findById??? se estou usando a palavra prontuário??
+router.get("/consultas", controller.getAppointmentByDate); // ok
 
-// router.get("/date", controller.getByDate);
+router.get("/exams", controller.getExamsByDate); // ok
 
-router.patch("/:prontuario", controller.updatePrenatalById);// tenho que mudar o findById??? se estou usando a palavra prontuário??
+router.patch("/update", controller.updatePrenatalBynumeroProntuario); // ok
 
-router.delete("/:prontuario", controller.deletePrenatal);// tenho que mudar o findById??? se estou usando a palavra prontuário??
+router.get("/:numeroProntuario", controller.findBynumeroProntuario); // ok
+
+router.delete("/delete", controller.deletePrenatal); // ok
 
 module.exports = router;
