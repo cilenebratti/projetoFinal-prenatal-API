@@ -1,4 +1,5 @@
 const prenatalModel = require("../model/prenatalModel");
+
 const jwt = require("jsonwebtoken");
 const SECRET = process.env.SECRET;
 
@@ -52,14 +53,16 @@ const findAllPrenatal = async (req,res) => {
     jwt.verify(token, SECRET, async function (erro) {
       if (erro) {
         return res.status(403).send("Acesso não autorizado!!!")
-      } 
-      
-      const allAcervo = await prenatalModel.find({}, null);
-        res.status(200).json(allAcervo);
-    })  
+      }
+     
+    const allAcervo = await prenatalModel.find({}, null);
+    return res.status(200).json(allAcervo);
+
+    })
+
     } catch (error) {
-        res.status(500).json({ message: error.message});
-    };
+        return res.status(500).json({ message: error.message});
+    }
 };
 
 

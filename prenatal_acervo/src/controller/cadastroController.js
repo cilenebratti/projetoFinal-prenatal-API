@@ -13,9 +13,9 @@ const addCadastro =  (req, res) => {
         const senhaComHash = bcrypt.hashSync(senha, 10)
         const cadastro = new cadastroModel({nome, email, senha: senhaComHash})
         cadastro.save()
-        res.status(201).json({ message: "cadastro realizado com sucesso", cadastro})
+        return res.status(201).json({ message: "cadastro realizado com sucesso", cadastro})
      } catch (err) {
-        res.status(500).json({ message: err.message })
+        return res.status(500).json({ message: err.message })
     }
 };
 

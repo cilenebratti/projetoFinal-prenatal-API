@@ -119,7 +119,7 @@ Cadastro:
 </br>
 </br>
 
-- Projeto está hospedado [aqui](https://prenatal-acervo.onrender.com/minha-rota-de-documentacao/)
+- Projeto está hospedado [aqui](https://prenatal-acervo.onrender.com/)
 - Documentação está hospedado [aqui](http://localhost:2015/minha-rota-de-documentacao/)
 
 </br>

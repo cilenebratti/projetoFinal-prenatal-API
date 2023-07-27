@@ -22,9 +22,9 @@ app.use(cors());
 
 mongoose.connect();
 
-app.use("/cadastro-prenatal/prenatal", prenatalRoutes);
+app.use("/prenatal_acervo/cadastro", cadastroRoute);
 
-app.use("/cadastro-prenatal", cadastroRoute);
+app.use("/prenatal_acervo/prenatal", prenatalRoutes);
 
 app.use('/minha-rota-de-documentacao', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 

@@ -6,7 +6,7 @@ const router = express.Router();
 const controller = require("../controller/cadastroController");
 
 
-router.post("/cadastro", controller.addCadastro);
+router.post("/cadastro/add", controller.addCadastro);
 
 router.get("/cadastro", controller.getAllCadastro);
 
