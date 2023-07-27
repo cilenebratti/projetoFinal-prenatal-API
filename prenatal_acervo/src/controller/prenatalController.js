@@ -1,5 +1,6 @@
 const prenatalModel = require("../model/prenatalModel");
-
+const jwt = require("jsonwebtoken");
+const SECRET = process.env.SECRET;
 
 const newPrenatal = async (req, res) => {
     try {
@@ -40,8 +41,22 @@ const newPrenatal = async (req, res) => {
 
 const findAllPrenatal = async (req,res) => {
     try {
-        const allAcervo = await prenatalModel.find({}, null);
+        const authHeader = req.get("authorization") // pega o cabeçalho de autorização
+
+    if (!authHeader) {
+      return res.status(401).send("Você esqueceu de passar as informações de autorização!!")
+    }
+
+    const token = authHeader.split(" ")[1] 
+
+    jwt.verify(token, SECRET, async function (erro) {
+      if (erro) {
+        return res.status(403).send("Acesso não autorizado!!!")
+      } 
+      
+      const allAcervo = await prenatalModel.find({}, null);
         res.status(200).json(allAcervo);
+    })  
     } catch (error) {
         res.status(500).json({ message: error.message});
     };
