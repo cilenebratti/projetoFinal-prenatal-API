@@ -5,13 +5,119 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "localhost:10000",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "http"
   ],
   "paths": {
-    "/cadastro-prenatal/prenatal/new": {
+    "/prenatal_acervo/cadastro/cadastro/add": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nome": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/prenatal_acervo/cadastro/cadastro": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/prenatal_acervo/cadastro/cadastro/login": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/prenatal_acervo/cadastro/cadastro/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/prenatal_acervo/prenatal/new": {
       "post": {
         "description": "",
         "parameters": [
@@ -65,7 +171,7 @@
         }
       }
     },
-    "/cadastro-prenatal/prenatal/all": {
+    "/prenatal_acervo/prenatal/all": {
       "get": {
         "description": "",
         "responses": {
@@ -84,7 +190,7 @@
         }
       }
     },
-    "/cadastro-prenatal/prenatal/consultas": {
+    "/prenatal_acervo/prenatal/consultas": {
       "get": {
         "description": "",
         "parameters": [
@@ -104,7 +210,7 @@
         }
       }
     },
-    "/cadastro-prenatal/prenatal/exams": {
+    "/prenatal_acervo/prenatal/exams": {
       "get": {
         "description": "",
         "parameters": [
@@ -124,7 +230,7 @@
         }
       }
     },
-    "/cadastro-prenatal/prenatal/update": {
+    "/prenatal_acervo/prenatal/update": {
       "patch": {
         "description": "",
         "parameters": [
@@ -178,7 +284,7 @@
         }
       }
     },
-    "/cadastro-prenatal/prenatal/{numeroProntuario}": {
+    "/prenatal_acervo/prenatal/{numeroProntuario}": {
       "get": {
         "description": "",
         "parameters": [
@@ -199,7 +305,7 @@
         }
       }
     },
-    "/cadastro-prenatal/prenatal/delete": {
+    "/prenatal_acervo/prenatal/delete": {
       "delete": {
         "description": "",
         "parameters": [
@@ -214,110 +320,6 @@
                 }
               }
             }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/cadastro-prenatal/cadastro": {
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "nome": {
-                  "example": "any"
-                },
-                "email": {
-                  "example": "any"
-                },
-                "senha": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/cadastro-prenatal/cadastro/login": {
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "email": {
-                  "example": "any"
-                },
-                "senha": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/cadastro-prenatal/cadastro/{id}": {
-      "delete": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
