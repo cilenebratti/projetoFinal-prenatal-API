@@ -6,13 +6,15 @@ const router = express.Router();
 const controller = require("../controller/cadastroController");
 
 
-router.post("/cadastro/add", controller.addCadastro);
 
-router.get("/cadastro", controller.getAllCadastro);
+router.get("/", controller.getAllCadastro);
 
-router.post("/cadastro/login", controller.login);
+router.post("/add", controller.addCadastro);
 
-router.delete("/cadastro/:id", controller.deleteById);
+router.post("/login", controller.login);
+
+
+router.delete("/:id", controller.deleteById);
 
 
 

@@ -17,6 +17,6 @@ const cadastroSchema = new mongoose.Schema(
     }
 )
 
-const Cadastro = mongoose.model("cadastro", cadastroSchema);
+const cadastroModel = mongoose.model("cadastro", cadastroSchema);
 
-module.exports = Cadastro
+module.exports = cadastroModel

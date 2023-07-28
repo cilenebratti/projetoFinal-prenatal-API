@@ -119,8 +119,10 @@ Cadastro:
 </br>
 </br>
 
-- Projeto está hospedado [aqui](https://prenatal-acervo.onrender.com/)
-- Documentação está hospedado [aqui](http://localhost:2015/minha-rota-de-documentacao/)
+- Este projeto está hospedado [aqui](https://prenatal-acervo.onrender.com/).
+- E documentado [aqui](http://localhost:2015/minha-rota-de-documentacao/).
+- Apresentação do projeto em site [aqui](https://www.canva.com/design/DAFp4fSpPdQ/l-5SUVV34teUofGlwuyg_Q/view?website#2).
+- Slides da apresentação do projeto [aqui](https://www.canva.com/design/DAFp4fSpPdQ/D8E2YHnuhesZS7GMod-QJA/edit?utm_content=DAFp4fSpPdQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
 
 </br>
 

@@ -38,7 +38,7 @@ const prenatalSchema = mongoose.Schema(
         },
 
         agendaExames: { 
-            type: [String], // 3 entradas de datas como string ( "22/07/2023", "25/07/2023", "29/07/2023")
+            type: [String], 
             required: true,
         },
 
